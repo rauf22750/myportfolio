@@ -1,14 +1,12 @@
 {
-  "builds": [
-    {
-      "src": "myportfolio/wsgi.py",
-      "use": "@vercel/python"
-    }
-  ],
+  "version": 2,
+  "buildCommand": "pip install -r requirements.txt && python manage.py collectstatic --noinput",
+  "installCommand": "pip install -r requirements.txt",
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "myportfolio/wsgi.py"
+      "dest": "vercel_app.py"
     }
   ]
 }
+
